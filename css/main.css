@@ -1,0 +1,53 @@
+body {
+    background-color: #eedebd;
+}
+
+#blue {
+    background-color: #90cbd9;
+}
+.drinks {
+    background-color: #90cbd9;
+    height: 70px;
+    width: 300px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4%;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 1px solid black;
+    margin: 10px 20px 0 25px;
+}
+
+.drinks > h2 {
+    margin-top: 5px;
+}
+
+.drinks:hover {
+    box-shadow: black 0px 0px 4px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+#humberger-menu {
+    background-color: #90cbd9;
+}
+
+#search::placeholder {
+    color: black;
+}

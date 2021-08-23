@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <title>Document</title>
+</head>
+<body onload="loadPage()">
+    <header>
+        <div class="ui top attached menu" id="blue">
+            <img src="images/logo.jpg">
+            <h1>Coffee King</h1>
+            <div class="right menu">
+                <div class="ui transparent icon input">
+                    <input id="search" type="text" placeholder="Search Drinks">
+                    <i class="search link icon"></i>
+                </div>
+                <div class="ui dropdown icon item">
+                    <labal for='humberger' onclick="humberger()"><i class="wrench icon"></i></labal>
+                    <input type="checkbox" name="humberger" id="humberger" hidden>
+                    <div class="menu" id="humberger-menu">
+                        <div class="item"><a href="#" id="drinks" onclick="page(this.id)">Home</a></div>
+                        <div class="item"><a href="#" id="login" onclick="page(this.id)">Login</a></div>
+                        <div class="item"><a href="#" id="register" onclick="page(this.id)">Register</a></div>
+                        <div class="item"><a href="#" id="account" onclick="page(this.id)">Account</a></div>
+                        <div class="item"><a href="#" id="favs" onclick="page(this.id)">Favourite</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="ui centered grid">
+            <div class="row"></div>
+            <div id="drinks-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>Tea</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>Iced chocalete</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>Mocha</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>flat white</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="register-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="ui form">
+                            <div class="field">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="firstName" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="confirmPassword">Confirm Password:</label>
+                                <input type="password" name="confirmPassword" id="RG_username">
+                            </div>
+                            <input type="submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="login-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="ui form">
+                            <div class="field">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="RG_username">
+                            </div>
+                            <input type="submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="account-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <H2>Account</H2>
+                        <h3>Users username</h3>
+                        <p>Name: Lincoln</p>
+                    </div>
+                    <button class="ui blue button" id="edit" onclick="accountView(this.id)">Edit Account</button>
+                </div>
+            </div>
+            <div id="editAccount-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="ui form">
+                            <div class="field">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="firstName" id="RG_username">
+                            </div>
+                            <div class="field">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" id="RG_username">
+                            </div>
+                        </div>
+                        <button class="ui blue button" id="save" onclick="accountView(this.id)">Save changes</button>
+                    </div>
+                </div>
+            </div>
+            <div id="favs-page" class="hidden">
+                <div class="row">
+                    <div class="ten wide coloumn">
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>first fav drink</h2>
+                        </div>
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>second fav drink</h2>
+                        </div>
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>third fav drink</h2>
+                        </div>
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>fourth fav drink</h2>
+                        </div>
+                        <div class="drinks">
+                            <div class="image"></div>
+                            <h2>fifth fav drink</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
